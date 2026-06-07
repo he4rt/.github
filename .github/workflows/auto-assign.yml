@@ -1,7 +1,7 @@
 name: Auto assign author
 
 on:
-  # zizmor: ignore[dangerous-triggers] — no checkout, only gh CLI calls with event context
+  # zizmor: ignore[dangerous-triggers] — only checks out base branch to load the composite action, no untrusted code runs
   pull_request_target:
     branches: [main]
     types: [opened, reopened]
@@ -21,10 +21,7 @@ jobs:
     permissions:
       pull-requests: write # needed to add the PR author as assignee
     steps:
-      - shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
-          PR: ${{ github.event.pull_request.html_url }}
-          AUTHOR: ${{ github.event.pull_request.user.login }}
-          REPO: ${{ github.repository }}
-        run: gh pr edit "$PR" --add-assignee "$AUTHOR" --repo "$REPO"
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: ./actions/auto-assign
