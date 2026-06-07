@@ -20,6 +20,7 @@ Para fazer parte da nossa comunidade, basta entrar em nossa comunidade no [Disco
   <a href="https://instagram.com/heartdevs" target="_blank"> <img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
   <a href="https://www.facebook.com/groups/he4rt/" target="_blank"> <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" target="_blank"></a>
   <a href="https://www.linkedin.com/company/he4rt/" target="_blank"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+  <a href="https://chat.whatsapp.com/EBKjYxIodpe1x5LLExbTzK" target="_blank"> <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 </p>
 
 ---
