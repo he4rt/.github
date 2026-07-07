@@ -1,0 +1,27 @@
+name: Dependabot auto-merge
+
+on:
+  # zizmor: ignore[dangerous-triggers] — only checks out base branch to load the composite action, no untrusted code runs
+  pull_request_target:
+    branches: [main]
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  automerge:
+    name: Auto-merge Dependabot patch & minor
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    timeout-minutes: 5
+    permissions:
+      contents: write # squash-merge the PR
+      pull-requests: write # approve the PR
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+      - uses: ./actions/dependabot-automerge
